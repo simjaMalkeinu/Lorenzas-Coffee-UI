@@ -1,5 +1,14 @@
 <!-- BOOTSTRAP -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
+
+<!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+<!-- FONTAWEASOME -->
+<script src="https://kit.fontawesome.com/fd8ab87d68.js" crossorigin="anonymous"></script>
 
 
 <!-- BOOTSTRAP SCRIPS -->
