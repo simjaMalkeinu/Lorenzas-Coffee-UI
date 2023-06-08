@@ -1,0 +1,4 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /Lorenzas-Coffee-UI/
+RewriteRule ^/$ index.php [L]

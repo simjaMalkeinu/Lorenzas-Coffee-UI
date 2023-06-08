@@ -30,6 +30,19 @@ form.addEventListener("submit", (e) => {
   iniciarSesion();
 });
 
+// async function postData(url = "", data = {}) {
+//   // Opciones por defecto estan marcadas con un *
+//   const response = await fetch(url, {
+//     method: "POST",
+//     mode: "cors",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(data), // body data type must match "Content-Type" header
+//   });
+//   return response.json(); // parses JSON response into native JavaScript objects
+// }
+
 const iniciarSesion = () => {
   const dataUser = {
     rfc: rfc.value,
@@ -39,12 +52,23 @@ const iniciarSesion = () => {
   postData("http://localhost:3000/api/login", dataUser)
     .then((data) => {
       console.log(data);
-      data.status === "accepted"
-        ? (location.href = "./products.php")
-        : (alertCSS.innerHTML = `<div class="alert alert-danger d-flex justify-content-between" role="alert">
+
+      if (data.status === "accepted") {
+        const user = data.data;
+        location.href =
+          "./modules/loginSesion.php?name=" +
+          user.nombre +
+          "&rfc=" +
+          user.rfc +
+          "&email=" +
+          user.correo +
+          "&type=" +
+          user.tipo;
+      } else
+        alertCSS.innerHTML = `<div class="alert alert-danger d-flex justify-content-between" role="alert">
                                 ${data.message}
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>`);
+                            </div>`;
     })
     .finally(() => {
       loader.classList.add("visually-hidden");
@@ -52,16 +76,3 @@ const iniciarSesion = () => {
     })
     .catch((err) => console.log("Solicitud fallida", err));
 };
-
-async function postData(url = "", data = {}) {
-  // Opciones por defecto estan marcadas con un *
-  const response = await fetch(url, {
-    method: "POST",
-    mode: "cors", 
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data), // body data type must match "Content-Type" header
-  });
-  return response.json(); // parses JSON response into native JavaScript objects
-}
