@@ -36,7 +36,7 @@ const iniciarSesion = () => {
     password: password.value,
   };
 
-  postData("http://localhost:3000/api/login", dataUser)
+  postData("https://lorenzas-coffee-api-production.up.railway.app/api/login", dataUser)
     .then((data) => {
       console.log(data);
 
