@@ -16,7 +16,7 @@ $data = array(
     'type' => $type,
 );
 
-var_dump($data);
+// var_dump($data);
 
 
 session_start();
