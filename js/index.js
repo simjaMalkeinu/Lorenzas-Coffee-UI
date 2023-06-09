@@ -39,12 +39,23 @@ const iniciarSesion = () => {
   postData("http://localhost:3000/api/login", dataUser)
     .then((data) => {
       console.log(data);
-      data.status === "accepted"
-        ? (location.href = "./products.php")
-        : (alertCSS.innerHTML = `<div class="alert alert-danger d-flex justify-content-between" role="alert">
+
+      if (data.status === "accepted") {
+        const user = data.data;
+        location.href =
+          "login/" +
+          user.nombre.replaceAll(' ', '-') +
+          "/" +
+          user.rfc +
+          "/" +
+          user.correo +
+          "/" +
+          user.tipo;
+      } else
+        alertCSS.innerHTML = `<div class="alert alert-danger d-flex justify-content-between" role="alert">
                                 ${data.message}
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>`);
+                            </div>`;
     })
     .finally(() => {
       loader.classList.add("visually-hidden");
@@ -52,16 +63,3 @@ const iniciarSesion = () => {
     })
     .catch((err) => console.log("Solicitud fallida", err));
 };
-
-async function postData(url = "", data = {}) {
-  // Opciones por defecto estan marcadas con un *
-  const response = await fetch(url, {
-    method: "POST",
-    mode: "cors", 
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data), // body data type must match "Content-Type" header
-  });
-  return response.json(); // parses JSON response into native JavaScript objects
-}
