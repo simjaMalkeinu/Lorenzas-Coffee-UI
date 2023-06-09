@@ -20,14 +20,20 @@
                     <p>Users</p>
                 </li>
                 <li>
+                    <i class="fa-solid fa-folder-open"></i>
+                    <p>Ordenes de Compra</p>
+                </li>
+                <li>
                     <i class="fa-solid fa-user"></i>
                     <p>Cuenta</p>
                 </li>
             </div>
-            <button class="btn bg-primary text-light d-grid logout">
-                <p class="my-auto">Cerrar sesion</p>
-                <i class="fa-solid fa-right-from-bracket"></i>
-            </button>
+            <a href="/logout" class="d-grid">
+                <button class="btn bg-primary text-light d-grid logout">
+                    <p class="my-auto">Cerrar sesion</p>
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </a>
         </ul>
     </nav>
 </section>
