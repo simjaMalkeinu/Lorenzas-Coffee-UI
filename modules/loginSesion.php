@@ -9,18 +9,20 @@ $type = $_GET['type'];
 // echo $email;
 // echo $type;
 
-$data = json_encode(array(
+$data = array(
     'rfc' => $rfc,
-    'name' => $name,
+    'name' => str_replace("-", ' ', $name),
     'email' => $email,
-    'type' => $type
-));
+    'type' => $type,
+);
+
+var_dump($data);
 
 
 session_start();
 
 $_SESSION['user'] = $data;
-$_SESSION['permissions'] = $data->$type;
+$_SESSION['permissions'] = $data['type'];
 
-header('location: ../products.php');
+    header('location: /products');
 ?>

@@ -56,13 +56,13 @@ const iniciarSesion = () => {
       if (data.status === "accepted") {
         const user = data.data;
         location.href =
-          "./modules/loginSesion.php?name=" +
-          user.nombre +
-          "&rfc=" +
+          "login/" +
+          user.nombre.replaceAll(' ', '-') +
+          "/" +
           user.rfc +
-          "&email=" +
+          "/" +
           user.correo +
-          "&type=" +
+          "/" +
           user.tipo;
       } else
         alertCSS.innerHTML = `<div class="alert alert-danger d-flex justify-content-between" role="alert">

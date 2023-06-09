@@ -1,4 +1,14 @@
 Options +FollowSymLinks
 RewriteEngine on
-RewriteBase /Lorenzas-Coffee-UI/
-RewriteRule ^/$ index.php [L]
+
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+
+RewriteRule ^login$ index.php [L]
+RewriteRule ^logout$ /modules/logoutSesion.php [L]
+
+RewriteRule ^login/(.*)/(.*)/(.*)/(.*)$ /modules/loginSesion.php?name=$1&rfc=$2&email=$3&type=$4 [L]
