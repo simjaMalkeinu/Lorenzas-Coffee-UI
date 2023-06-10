@@ -17,9 +17,18 @@
 </head>
 
 <body>
-    <?php include_once './components/navigation.php' ?>
+    <main>
+        <container class="d-flex">
+            <?php include_once './components/navigation.php' ?>
+            <section class="dashboard">
+                <?php include_once './components/header.php'  ?>
+                <div class="container mt-2">
+                    <h1>dashboard products</h1>
+                </div>
+            </section>
+        </container>
+    </main>
 
-    <h1>dashboard products</h1>
 </body>
 
 </html>

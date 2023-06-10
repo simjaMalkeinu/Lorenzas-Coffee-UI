@@ -36,15 +36,19 @@ const iniciarSesion = () => {
     password: password.value,
   };
 
+// https://lorenzas-coffee-api-production.up.railway.app/api/login
+//http://localhost:3000/api/login
+
   postData("https://lorenzas-coffee-api-production.up.railway.app/api/login", dataUser)
     .then((data) => {
       console.log(data);
 
       if (data.status === "accepted") {
         const user = data.data;
+        const name = user.nombre + " " + user.apellido_paterno + " " + user.apellido_materno;
         location.href =
           "login/" +
-          user.nombre.replaceAll(' ', '-') +
+          name.replaceAll(' ', '-') +
           "/" +
           user.rfc +
           "/" +
