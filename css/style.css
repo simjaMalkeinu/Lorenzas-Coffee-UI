@@ -17,3 +17,13 @@ container{
     display: grid;
     grid-template-rows: 66px auto;
 }
+
+.btn-add{
+    grid-template-columns: 4fr 1fr;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.btn-add p{
+    margin: auto 0;
+}
