@@ -15,10 +15,16 @@
                     <i class="fa-solid fa-bars-progress"></i>
                     <p>Reportes</p>
                 </li>
-                <li>
-                    <i class="fa-solid fa-users"></i>
-                    <p>Users</p>
-                </li>
+                <?php 
+                 if (($_SESSION['user']['type'] == 'administrador')) {
+                    echo '<li>
+                            <i class="fa-solid fa-users"></i>
+                            <p>Users</p>
+                        </li>';
+                }
+                
+                ?>
+
                 <li>
                     <i class="fa-solid fa-folder-open"></i>
                     <p>Ordenes de Compra</p>
