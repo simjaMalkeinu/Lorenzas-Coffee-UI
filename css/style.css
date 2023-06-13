@@ -9,11 +9,45 @@ body{
 
 container{
     width: 100vw;
-    height: 100%;
+    height: 100vh;
 }
 
 .dashboard{
     width: 100%;
     display: grid;
     grid-template-rows: 66px auto;
+}
+
+.btn-add{
+    grid-template-columns: 4fr 1fr;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.btn-add p{
+    margin: auto 0;
+}
+
+.loader{
+    width: 100%;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    font-size: 20px;
+}
+
+.loader span{
+    width: 100%;
+    padding: 0.2em 0;
+    text-align: center;
+    border-radius: 30px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+td{
+    line-height: auto ;
 }

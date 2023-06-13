@@ -52,7 +52,7 @@ if (isset($_SESSION['user'])) {
                     </div>
 
                     <div class="d-grid mx-auto">
-                        <div class="mx-auto mt-4 mb-4 loader visually-hidden" id="loader">
+                        <div class="mx-auto mt-4 mb-4 loader visually-hidden text-light" id="loader">
                             <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
                             </div>
                             <span>Cargando ...</span>
