@@ -71,3 +71,8 @@
     align-items: center;
     padding: 1em 0;
 }
+
+.navigation nav ul li.inventario:hover{
+    background-color: cyan;
+    color: #2E302F;
+}
