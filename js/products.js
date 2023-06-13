@@ -24,7 +24,7 @@ const products = () => {
   loader.classList.remove("visually-hidden");
   table.classList.add("visually-hidden");
   tbody.innerHTML = "";
-  getData("http://localhost:3000/api/dashboard/products")
+  getData("https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/products")
     .then((data) => {
       data.forEach((product) => {
         const caducidad = new Date(product.caducidad);
@@ -64,7 +64,7 @@ const products = () => {
 // https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/insumos
 // http://localhost:3000/api/dashboard/insumos
 const getInsumos = () => {
-  getData("http://localhost:3000/api/dashboard/insumos")
+  getData("https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/insumos")
     .then((data) => {
       allInsumos = data;
     })
@@ -142,7 +142,7 @@ form.addEventListener("submit", (e) => {
 
   const nombre = document.getElementById("nombre").value;
   const cantidad = parseFloat(document.getElementById("cantidad").value);
-  const caducidad = new Date(document.getElementById("caducidad").value);
+  const caducidad = document.getElementById("caducidad").value;
   const estado = document.getElementById("estado").value;
   const costo = parseFloat(document.getElementById("costo").value);
   const precio_venta = parseFloat(
