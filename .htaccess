@@ -9,6 +9,13 @@ RewriteRule ^(.*)$ $1.php
 
 
 RewriteRule ^login$ index.php [L]
+RewriteRule ^Ventas$ sales.php [L]
+RewriteRule ^Productos$ products.php [L]
+RewriteRule ^Insumos$ supplies.php [L]
+RewriteRule ^Reportes$ reports.php [L]
+RewriteRule ^Usuarios$ users.php [L]
+RewriteRule ^OrdenesCompra$ purchaseOrders.php [L]
+RewriteRule ^Cuenta$ acount.php [L]
 RewriteRule ^logout$ /modules/logoutSesion.php [L]
 
 RewriteRule ^login/(.*)/(.*)/(.*)/(.*)$ /modules/loginSesion.php?name=$1&rfc=$2&email=$3&type=$4 [L]

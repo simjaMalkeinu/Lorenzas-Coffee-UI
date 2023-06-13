@@ -1,1 +1,0 @@
-<h1>User's dashboard</h1>

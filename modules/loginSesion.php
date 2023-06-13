@@ -24,5 +24,5 @@ session_start();
 $_SESSION['user'] = $data;
 $_SESSION['permissions'] = $data['type'];
 
-    header('location: /products');
+    header('location: /Ventas');
 ?>

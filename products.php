@@ -25,6 +25,7 @@
                 <?php include_once './components/header.php'  ?>
                 <div class="container mt-4">
                     <h1><span class="badge bg-success">PRODUCTOS</span></h1>
+                    <div id="alert"></div>
                     <div class="d-flex justify-content-end my-2">
                         <button type="button" class="btn btn-primary btn-lg d-grid btn-add" data-bs-toggle="modal"
                             data-bs-target="#nuevoProducto" id="btn-nuevo-produto">
@@ -70,18 +71,18 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <form>
+                            <form id="post">
                                 <div class="modal-body">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="nombre" placeholder="Nombre">
                                         <label for="floatingInput">Nombre</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="cantidad" placeholder="Cantidad">
+                                        <input type="number" step="any" class="form-control" id="cantidad" placeholder="Cantidad">
                                         <label for="floatingInput">Cantidad</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="caducidad" placeholder="Caducidad">
+                                        <input type="date" class="form-control" id="caducidad" placeholder="Caducidad">
                                         <label for="floatingInput">Caducidad</label>
                                     </div>
                                     <div class="form-floating mb-3">
@@ -97,16 +98,16 @@
                                         <label for="floatingSelect">Estado</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="costo" placeholder="Costo">
+                                        <input type="number" step="any" class="form-control" id="costo" placeholder="Costo">
                                         <label for="floatingInput">Costo</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="precio_venta"
+                                        <input type="number" step="any" class="form-control" id="precio_venta"
                                             placeholder="Precio venta">
                                         <label for="floatingInput">Precio venta</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="Number" class="form-control" id="unidad" placeholder="Unidad">
+                                        <input type="text" class="form-control" id="unidad" placeholder="Unidad">
                                         <label for="floatingInput">Unidad</label>
                                     </div>
                                     <h5>Insumos del producto
@@ -119,12 +120,11 @@
                                     </h5>
                                     <div id="insumos">
                                     </div>
-                                    <div class="mx-auto mt-4 mb-4 loader text-primary" id="loader2">
-                                        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
-                                        </div>
-                                        <span>Cargando ...</span>
+                                </div>
+                                <div class="mx-auto mt-4 mb-4 loader text-primary" id="loader2">
+                                    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
                                     </div>
-
+                                    <span>Cargando ...</span>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
