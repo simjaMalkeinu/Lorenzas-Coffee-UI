@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reportes</title>
+    <title>Usuarios</title>
 
     <?php include_once './components/styles.php' ?>
 </head>
@@ -18,12 +18,12 @@
             <section class="dashboard">
                 <?php include_once './components/header.php'  ?>
                 <div class="container mt-4">
-                    <h1><span class="badge bg-success">Reportes</span></h1>
+                    <h1><span class="badge bg-success">Usuarios</span></h1>
                     <div id="alert"></div>
                     <div class="d-flex justify-content-end my-2">
                         <button type="button" class="btn btn-primary btn-lg d-grid btn-add" data-bs-toggle="modal"
                             data-bs-target="#nuevoProducto" id="btn-nuevo-produto">
-                            <p>Nuevo Reporte</p>
+                            <p>Nuevo Usuario</p>
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
