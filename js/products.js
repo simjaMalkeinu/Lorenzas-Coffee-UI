@@ -24,10 +24,22 @@ const products = () => {
   loader.classList.remove("visually-hidden");
   table.classList.add("visually-hidden");
   tbody.innerHTML = "";
-  getData("https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/products")
+  getData(
+    "https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/products"
+  )
     .then((data) => {
       data.forEach((product) => {
         const caducidad = new Date(product.caducidad);
+        let estado = "";
+        if (new Date() > caducidad)
+          estado = `<p><span class="badge bg-danger">Caducado</span></p>`;
+        else if (product.cantidad === 0)
+          estado = `<p><span class="badge bg-danger">Sin existencias</span></p>`;
+        else
+          product.canmin > product.cantidad
+            ? (estado = `<p><span class="badge bg-warning">Insuficiente</span></p>`)
+            : (estado = `<p><span class="badge bg-success">Disponible</span></p>`);
+
         tbody.innerHTML += `<tr>
                               <th scope="row">${product.id_producto}</th>
                               <td>${product.nombre}</td>
@@ -38,7 +50,7 @@ const products = () => {
                                 "/" +
                                 caducidad.getFullYear()
                               }</td>
-                              <td>${product.estado}</td>
+                              <td>${estado}</td>
                               <td>${product.costo}</td>
                               <td>${product.precio_venta}</td>
                               <td>${
@@ -64,7 +76,9 @@ const products = () => {
 // https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/insumos
 // http://localhost:3000/api/dashboard/insumos
 const getInsumos = () => {
-  getData("https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/insumos")
+  getData(
+    "https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/insumos"
+  )
     .then((data) => {
       allInsumos = data;
     })
@@ -115,7 +129,10 @@ deleteInsumo.addEventListener("click", () => {
 // https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/newProduct
 // http://localhost:3000/api/dashboard/newProduct
 const postProducto = (dataProduct) => {
-  postData("https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/newProduct", dataProduct)
+  postData(
+    "https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/newProduct",
+    dataProduct
+  )
     .then((response) => {
       console.log(response);
       if (response.status === "created")
@@ -143,11 +160,11 @@ form.addEventListener("submit", (e) => {
   const nombre = document.getElementById("nombre").value;
   const cantidad = parseFloat(document.getElementById("cantidad").value);
   const caducidad = document.getElementById("caducidad").value;
-  const estado = document.getElementById("estado").value;
   const costo = parseFloat(document.getElementById("costo").value);
   const precio_venta = parseFloat(
     document.getElementById("precio_venta").value
   );
+  const canmin = parseFloat(document.getElementById("canmin").value);
   const unidad = document.getElementById("unidad").value;
   const insumosDom = document.getElementsByName("insumo");
   const insumosDomCantidad = document.getElementsByName("insumo-cantidad");
@@ -158,10 +175,10 @@ form.addEventListener("submit", (e) => {
     nombre,
     caducidad,
     cantidad,
-    estado,
     costo,
     precio_venta,
     unidad,
+    canmin,
   };
 
   newProduct.insumos = [];
@@ -183,9 +200,12 @@ form.addEventListener("submit", (e) => {
 // http://localhost:3000/api/dashboard/deleteProduct
 const deleteP = (date) => {
   window.confirm("Estas seguro de eliminar este producto? ")
-    ? deleteData("https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/deleteProduct", {
-        id: date,
-      })
+    ? deleteData(
+        "https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/deleteProduct",
+        {
+          id: date,
+        }
+      )
         .then((response) => {
           if (response.status === "deleted")
             alertCSS.innerHTML = `<div class="alert alert-info d-flex justify-content-between" role="alert">

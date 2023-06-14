@@ -33,7 +33,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
-                    <table class="table visually-hidden rounded-2 text-center" id="tabla-productos">
+                    <table class="table visually-hidden rounded-2" id="tabla-productos">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -78,7 +78,8 @@
                                         <label for="floatingInput">Nombre</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="number" step="any" class="form-control" id="cantidad" placeholder="Cantidad">
+                                        <input type="number" step="any" class="form-control" id="cantidad"
+                                            placeholder="Cantidad">
                                         <label for="floatingInput">Cantidad</label>
                                     </div>
                                     <div class="form-floating mb-3">
@@ -86,19 +87,8 @@
                                         <label for="floatingInput">Caducidad</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" id="estado" aria-label="Estado">
-                                            <option selected></option>
-                                            <option value="Comestible">Comestible</option>
-                                            <option value="Cadudado">Cadudado</option>
-                                            <option value="Disponible">Disponible</option>
-                                            <option value="No Disponible">No disponible</option>
-                                            <option value="Con existencias">Con existencias</option>
-                                            <option value="Sin existencias">Sin existencias</option>
-                                        </select>
-                                        <label for="floatingSelect">Estado</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="number" step="any" class="form-control" id="costo" placeholder="Costo">
+                                        <input type="number" step="any" class="form-control" id="costo"
+                                            placeholder="Costo">
                                         <label for="floatingInput">Costo</label>
                                     </div>
                                     <div class="form-floating mb-3">
@@ -109,6 +99,10 @@
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="unidad" placeholder="Unidad">
                                         <label for="floatingInput">Unidad</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="number" step="any" class="form-control" id="canmin" placeholder="Cantidad Minima">
+                                        <label for="floatingInput">Cantidad Minima</label>
                                     </div>
                                     <h5>Insumos del producto
                                         <button type="button" class="btn badge bg-success" id="add-insumo">
