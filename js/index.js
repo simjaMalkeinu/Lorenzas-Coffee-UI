@@ -39,7 +39,7 @@ const iniciarSesion = () => {
 // https://lorenzas-coffee-api-production.up.railway.app/api/login
 //http://localhost:3000/api/login
 
-  postData("https://lorenzas-coffee-api-production.up.railway.app/api/login", dataUser)
+  postData("http://localhost:3000/api/login", dataUser)
     .then((data) => {
       console.log(data);
 

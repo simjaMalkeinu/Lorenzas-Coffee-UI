@@ -27,7 +27,7 @@
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
-                    <table class="table visually-hidden rounded-2" id="tabla-productos">
+                    <table class="table visually-hidden rounded-2" id="tabla-insumos">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
