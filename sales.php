@@ -27,16 +27,14 @@
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
-                    <table class="table visually-hidden rounded-2 text-center" id="tabla-productos">
+                    <table class="table visually-hidden rounded-2 text-center" id="tabla-ventas">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">caducidad</th>
-                                <th scope="col">estado</th>
-                                <th scope="col">costo</th>
-                                <th scope="col">Precio venta</th>
-                                <th scope="col">Cantidad</th>
+                                <th scope="col">Registro</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">RFC empleado</th>
+                                <th scope="col">TOTAL</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
@@ -59,6 +57,7 @@
     </main>
 
     <script src="./js/fetchPeticiones.js"></script>
+    <script src="./js/ventas.js"></script>
 </body>
 
 </html>

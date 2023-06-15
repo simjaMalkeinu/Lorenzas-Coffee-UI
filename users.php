@@ -27,16 +27,14 @@
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
-                    <table class="table visually-hidden rounded-2 text-center" id="tabla-productos">
+                    <table class="table visually-hidden rounded-2 text-center" id="tabla-usuarios">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">#RFC</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">caducidad</th>
-                                <th scope="col">estado</th>
-                                <th scope="col">costo</th>
-                                <th scope="col">Precio venta</th>
-                                <th scope="col">Cantidad</th>
+                                <th scope="col">correo</th>
+                                <th scope="col" class="contraseña">contraseña</th>
+                                <th scope="col">tipo</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
@@ -59,6 +57,7 @@
     </main>
 
     <script src="./js/fetchPeticiones.js"></script>
+    <script src="./js/usuarios.js"></script>
 </body>
 
 </html>
