@@ -1,4 +1,4 @@
-const table = document.getElementById("tabla-productos");
+const table = document.getElementById("tabla-insumos");
 const loader = document.getElementById("loader");
 
 const btnNew = document.getElementById("btn-nuevo");
@@ -18,7 +18,9 @@ const getInsumos = () => {
   loader.classList.remove("visually-hidden");
   table.classList.add("visually-hidden");
   tbody.innerHTML = "";
-  getData("http://localhost:3000/api/dashboard/insumos")
+  getData(
+    "http://localhost:3000/api/dashboard/insumos"
+  )
     .then((data) => {
       data.forEach((insumo) => {
         const caducidad = new Date(insumo.caducidad);

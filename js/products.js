@@ -25,7 +25,7 @@ const products = () => {
   table.classList.add("visually-hidden");
   tbody.innerHTML = "";
   getData(
-    "https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/products"
+    "http://localhost:3000/api/dashboard/products"
   )
     .then((data) => {
       data.forEach((product) => {
@@ -77,7 +77,7 @@ const products = () => {
 // http://localhost:3000/api/dashboard/insumos
 const getInsumos = () => {
   getData(
-    "https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/insumos"
+    "http://localhost:3000/api/dashboard/insumos"
   )
     .then((data) => {
       allInsumos = data;
@@ -130,7 +130,7 @@ deleteInsumo.addEventListener("click", () => {
 // http://localhost:3000/api/dashboard/newProduct
 const postProducto = (dataProduct) => {
   postData(
-    "https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/newProduct",
+    "http://localhost:3000/api/dashboard/newProduct",
     dataProduct
   )
     .then((response) => {
@@ -201,7 +201,7 @@ form.addEventListener("submit", (e) => {
 const deleteP = (date) => {
   window.confirm("Estas seguro de eliminar este producto? ")
     ? deleteData(
-        "https://lorenzas-coffee-api-production.up.railway.app/api/dashboard/deleteProduct",
+        "http://localhost:3000/api/dashboard/deleteProduct",
         {
           id: date,
         }
